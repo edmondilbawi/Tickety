@@ -1,0 +1,35 @@
+{
+  "name": "tickety-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "npm run test:integration",
+    "test:create": "node tests/setup/createTestDatabase.js",
+    "test:setup": "node tests/setup/resetTestDatabase.js",
+    "test:integration": "node tests/runIntegrationTests.js",
+    "demo:setup": "node scripts/setupDemo.js",
+    "demo:reset": "node scripts/resetDemo.js",
+    "owner:promote": "node scripts/promoteOwner.js",
+    "user:reset-password": "node scripts/resetUserPassword.js",
+    "env:configure-jwt": "node scripts/configureLocalJwt.js",
+    "db:migrate:owner-approval": "node scripts/applyOwnerApprovalMigration.js",
+    "email:test": "node scripts/testEmail.js",
+    "db:migrate:event-category": "node scripts/applyEventCategoryMigration.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^10.1.1",
+    "pg": "^8.16.3",
+    "helmet": "^8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
